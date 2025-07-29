@@ -13,7 +13,6 @@ WHERE weather_type = 'Mist'
 # Commit changes
 conn.commit()
 # Optional: Show the updated table
-cursor.execute("SELECT * FROM weather WHERE weather_type IN('Rain','Mist','Drizzle' From weather")
+cursor.execute("SELECT DISTINCT(is_holiday) FROM weather")
 rows = cursor.fetchall()
 print(tabulate(rows, headers=[i[0] for i in cursor.description]))
-
